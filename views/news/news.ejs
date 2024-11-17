@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <%- include("../navbar.ejs"); %>
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5">
+        <h1 class="display-1 mt-5">Aktualności</h1>
+        <p class="mt-5">Ostatnie wydarzenia z życia szkoły</p>
+    </header>
+
+    <main class="container-fluid w-50 mt-5">
+
+        <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center">
+            <h2 class="mb-4" id="raypong">Silesian Cyberhackaton</h2>
+
+            <br>
+
+            <div class="w-100 p-2 d-flex flex-wrap justify-content-around bg-dark-subtle rounded">
+                <img class="w-40 pe-3 mb-2" src="./hacker.png" alt="Zrzut ekranu z gry RAYPONG">
+            </div>
+            <p class="mt-2">
+                <p>10 października uczniowie klasy 2P pojechali do Gliwic na konkurs organizowany przez Politechnike Śląską.</p>
+
+                <p class="m-4">Celem konkursu było wykorzystanie umiejętności zdobytych w szkole w celu stworzenia rozwiązań pomagających w ochronie klimatu</p>
+                <p>Uczniowie Tomasz Nowotny i Paweł Niedorodny z klasy 2P zdobyli 2 miejsce w tym prestiżowym konkursie</p>
+            </p>
+        </article>
+
+        <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center">
+            <h2 class="mb-4" id="motorolasciencecup">Konkurs fotograficzny</h2>
+
+            <br>
+
+            <div class="w-100 p-2 d-flex justify-content-around bg-dark-subtle rounded">
+                <img class="w-100 pe-3 " src="./foto.png" alt="Zdjęcie klasy 3B">
+            </div>
+
+            <p class="mt-2">
+                <p>Z okazji 11 listopada uczniowie klas trzecich zostali zaproszeni do wzięcia udziału w szkolnym konkursie fotograficznym.</p>
+                <p>Motywem były rekreacje zdjęć z życia codziennego w dwudziestoleciu międzywojennym.</p>
+                <p class="text-center">Zwycięzcami zostali uczniowie klasy 3B, którzy dostali za zadanie zrekreować zdjęcie z 1922 roku przedstawiające lekcję języka polskiego w warszawskim liceum.</p>
+            </p>
+        </article>
+
+        <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center">
+            <h2 class="mb-4" id="facesofamerica">Technikon ESA</h2>
+
+            <br>
+
+            <div class="w-100 p-2 d-flex justify-content-around bg-dark-subtle rounded">
+                <img class="w-100 border border-black" src="./technikon.jpg" alt="Zrzut ekranu z gry Asteroids na Atari 2600">
+            </div>
+
+
+
+            <p class="mt-2">
+                <p>
+                    Pod koniec ubiegłego roku szkolego SP1 w Morzeszczynie dostała zaproszenie na wzięcie udziału w ogólnopolskim konkursie techniczym Technikon ESA organizowanym przez NASK.
+                </p>
+
+                <p>
+                    Uczniowie klasy 4A złożyli koncept projektyu późnym czerwcem i przez wakacje oczekiwaly podjęcia decyzji na temat ich zgłoszenia.
+                </p>
+                
+                <p>
+                    Po dostaniu informacji zwrotnej, Kacper Jabłonowski, Maciej Machura, Daniel Zbłok i Alan Ciemiński wzięli się do pracy nad urzeczywistnieniem ich wizji.
+                </p>
+
+                <p>
+                    Za stworzenie domowego systemu zarządzania zużyciem prądu zajęli drugie miejsce.
+                </p>
+
+                <i>Z dedykacją dla MH</i>
+            </p>
+        </article>
+    
+    </main>
+
+    <%- include("../footer.ejs"); %>
+</body>
+
+</html>

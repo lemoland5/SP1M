@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dziura</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body class="">
+    <%- include("../navbar.ejs"); %>
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5">
+        <h1 class="display-1 mt-5">
+            Uczymy się dla szkoły, nie dla życia
+        </h1>
+
+        <h2 class="fw-normal mt-5">Szkoła Podstawowa nr. 1 w Morzeszczynie</p>
+        <p class="fw-light mt-5">Odkryj swoje granice</p>
+    </header>
+
+    <hr>
+
+    <section class="container-fluid mt-5 justify-content-center">
+
+
+        <section class="row d-flex justify-content-center mb-5 gap-5">
+
+            <h3 class="display-3 text-center">Aktualności</h3>
+
+
+            <div class="card p-1" style="width: 18rem;">
+                <img src="./hacker.png" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column justify-content-around">
+                <h5 class="card-title">Silesian Cyberhackathon</h5>
+                <p class="card-text">Uczniowie naszej szkoły ostatnio pojechali do Gliwic aby zmierzyć się z innymi szkołami w konkursie programistycznym Silesian Cyberhackathon</p>
+                <a href="./news#raypong" class="btn btn-primary">Artykuł</a>
+                
+                </div>
+            </div>
+            <div class="card p-1 " style="width: 18rem;">
+                <img src="./foto-th.png" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column justify-content-around">
+                <h5 class="card-title">Konkurs fotograficzny</h5>
+                <p class="card-text">Klasy trzecie wzięły udział w konkursie fotograficznym "Życie w dwudziestoleciu międzywojennym"</p>
+                <a href="./news#motorolasciencecup" class="btn btn-primary">Artykuł</a>
+                </div>
+            </div>
+            <div class="card p-1" style="width: 18rem;">
+                <img src="./technikon.jpg" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column justify-content-around">
+                <h5 class="card-title">Technikon ESA</h5>
+                <p class="card-text">Uczniowie klasy 4A pojechali do Torunia na finał ogólnopolskiego konkursu Technikon ESA organizowanego przez NASK</p>
+                <a href="./news#facesofamerica" class="btn btn-primary">Artykuł</a>
+                </div>
+            </div>
+        </section>
+    
+       
+    </section>
+
+    <hr>
+
+    <section class="container-fluid mt-5 justify-content-center">
+
+
+        <section class="row d-flex justify-content-center mb-5 gap-5 text-center">
+
+        <h3 class="display-3 text-center">Z kim pracujemy</h3>
+
+
+            <div class="card p-1" style="width: 18rem;">
+                <img src="./cisco.png" class="card-img-top  ratio ratio-4x3 " alt="...">
+                <div class="card-body d-flex flex-column justify-content-around">
+                <h5 class="card-title">Cisco</h5>
+                <p class="card-text">Światowy lider w rozwiązaniach sieciowych</p>
+                
+                </div>
+            </div>
+            <div class="card p-1 d-flex justify-content-center" style="width: 18rem;">
+                <img src="./szambeko.png" class="card-img-top ratio ratio-4x3 " alt="...">
+                <div class="card-body d-flex flex-column justify-content-around">
+                <h5 class="card-title">Szambeko</h5>
+                <p class="card-text">Gliwicki lider w rozwiązaniach szambowych</p>
+                </div>
+            </div>
+            <div class="card p-1" style="width: 18rem;">
+                <img src="./matexbud.jpg" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column justify-content-around">
+                <h5 class="card-title">MatexBud</h5>
+                <p class="card-text">Morzeszczyński lider w rozwiązaniach budowych</p>
+                </div>
+            </div>
+        </section>
+    
+        <%- include("../footer.ejs"); %>
+</body>
+</html>

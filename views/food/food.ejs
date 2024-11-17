@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dziura</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("../navbar.ejs"); %>
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5">
+        <h3 class="display-3 mt-5">
+            Stołówka Szkola
+        </h3>
+
+    </header>
+
+    <section class="container-fluid mt-5 justify-content-center">
+
+
+        <section class="row d-flex justify-content-center mb-5 gap-5 text-center">
+
+        <h4 class="display-4 text-center">Karta dań</h3>
+
+
+            <div class="card p-1" style="width: 18rem;">
+                <img src="./szczaw.png" class="card-img-top  ratio ratio-4x3 " alt="...">
+                <div class="card-body d-flex flex-column justify-content-around">
+                <h5 class="card-title">Szczaw</h5>
+                <p class="card-text">Sycący szczaw z nasypu jest zdrową alternatywa dla popularnych dań obiadowych</p>
+                
+                </div>
+            </div>
+            <div class="card p-1 d-flex justify-content-center" style="width: 18rem;">
+                <img src="./vegemite.png" class="card-img-top ratio ratio-4x3 " alt="...">
+                <div class="card-body d-flex flex-column justify-content-around">
+                <h5 class="card-title">Vegemite</h5>
+                <p class="card-text">Popularna australijska pasta z kiszonych drożdży wzmocni układ odpornościowy i kubki smakowe każdego ucznia</p>
+                </div>
+            </div>
+            <div class="card p-1" style="width: 18rem;">
+                <img src="./kasia.png" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column justify-content-around">
+                <h5 class="card-title">Margaryna Kasia</h5>
+                <p class="card-text">Jako alternatywa do masła, margaryna jest tanią i przepyszną opcją do dań chlebowych</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="row d-flex justify-content-center mb-5 gap-5 text-center">
+
+                <div class="card p-1" style="width: 18rem;">
+                    <img src="./sledz.png" class="card-img-top  ratio ratio-4x3 " alt="...">
+                    <div class="card-body d-flex flex-column justify-content-around">
+                    <h5 class="card-title">Śledziki</h5>
+                    <p class="card-text">Śledzik na raz to dobry wegetariański zamiennik dla prawdziwego jedzenia</p>
+                    
+                    </div>
+                </div>
+                <div class="card p-1 d-flex justify-content-center" style="width: 18rem;">
+                    <img src="./konina.png" class="card-img-top ratio ratio-4x3 " alt="...">
+                    <div class="card-body d-flex flex-column justify-content-around">
+                    <h5 class="card-title">Konina</h5>
+                    <p class="card-text">"Sucha krowa" - tak nasz woźny opisuje wykwintny filet z konia oferowany przez naszą stołówkę</p>
+                    </div>
+                </div>
+                <div class="card p-1" style="width: 18rem;">
+                    <img src="./serca.png" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-around">
+                    <h5 class="card-title">Serca kurczaka</h5>
+                    <p class="card-text">Serce jest najsmaczniejszą i najpożywniejszą częścią kurczaka</p>
+                    </div>
+                </div>
+            </section>
+
+        <h4 class="display-4 text-center mb-5">Cennik</h3>
+
+            <section class="container d-flex flex-column align-items-center text-center mt-5 fw-bold">
+
+                <h6 class="mb-4">Subskrypcje długookresowe: </h6>
+        
+                <p>Szczaw 90 dni - 120zł</p>
+                <p>OwoceMorza 180 dni - 650zł</p>
+                <p>FullWypas 60 dni - 1125zł</p>
+
+                <h6 class="mt-4 mb-4">Płatności jednorazowe: </h6>
+        
+                <p>Konina z Drożdżami - 35zł</p>
+                <p>Serca w Margarynie - 15zł</p>
+                <p>Serce - 5zł</p>
+                <p>Śledziki ze Szczawiem - 24zł</p>
+            </section>
+ 
+    <%- include("../footer.ejs"); %>
+
+</body>
+</html>

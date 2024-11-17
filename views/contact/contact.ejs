@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dziura</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("../navbar.ejs"); %>
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5">
+        <h3 class="display-3 mt-5">
+            Informajce kontaktowe
+        </h3>
+
+    </header>
+
+    <section class="container d-flex flex-column align-items-center text-center mt-5 fw-bold">
+        <p>Adres email - sp1morzeszczyn@morzeszczyn.ru</p>
+        <p>Sekretariat - +7 911 123456</p>
+        <p>Gabinet higienistki - +7 912 654321</p>
+
+        <hr>
+
+        <h6 class="mb-4">Numery wewnętrzne: </h6>
+
+        <p>Portiernia - 22</p>
+        <p>Świetlica - 23</p>
+        <p>Biblioteka - 24</p>
+    </section>
+
+ 
+    <%- include("../footer.ejs"); %>
+
+</body>
+</html>
