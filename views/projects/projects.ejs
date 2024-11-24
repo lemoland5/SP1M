@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <%- include("../navbar.ejs"); %>
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5">
+        <h1 class="display-1 mt-5">Projekty</h1>
+        <p class="mt-5">Projekty państwowe i unijne, w których bierzemy udział</p>
+    </header>
+
+    <main class="container-fluid mt-5 d-flex flex-wrap justify-content-around" style="width: 90%;">
+
+
+        <h3 class="display-3 w-100 text-center">Wyjazdy</h3>
+
+        <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center" style="width: 42vw;">
+
+
+
+            <div class=" d-flex" style="height: 80%;">
+
+
+                <div class="w-50 p-2 d-flex justify-content-around rounded">
+                    <img class="w-100 pe-3 " src="./erasmus.jpg" alt="Zdjęcie klasy 3B">
+                </div>
+
+                <div class=" h-100 d-flex flex-column justify-content-around">
+                    <h1 class="align-self-center text-center">Erasmus Plus</h1>
+                    <p class="text-center" style="font-size: .9rem;">Co roku 15 uczniów z najlepszymi wynikami w nauce wyjeżdża na 2 miesiące do Portugalii na praktyki zawodowe.</p>
+                    <p class="text-center" style="font-size: .9rem;">Projekt Erasmus+ jest finansowany przez Unię Europejską</p>
+                </div>
+
+            </div>
+
+            <div class="w-100 d-flex justify-content-center  mt-3">
+                <form action="/download" method="post">
+                    <input type="text" name="file" value="erasmus.pdf" style="display: none;">
+                    <button type="submit" class="btn btn-primary">Pobierz formularz</button>
+                </form>
+
+                <form action="/download" method="post" class="ms-3">
+                    <input type="text" name="file" value="erasmus-zgoda.pdf" style="display: none;">
+                    <button type="submit" class="btn btn-primary">Pobierz Zgodę</button>
+                </form>
+            </div>
+
+        </article>
+
+       
+        <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center" style="width: 42vw;">
+
+
+
+            <div class=" d-flex" style="height: 100%;">
+
+
+                <div class="w-50 p-2 d-flex justify-content-around rounded">
+                    <img class="w-100 pe-3 " src="./essen.jpeg" alt="Zdjęcie klasy 3B">
+                </div>
+
+                <div class=" h-100 d-flex flex-column justify-content-around">
+                    <h1 class="align-self-center text-center">Polsko-Niemiecka Współpraca Młodzieży</h1>
+                    <p class="text-center" style="font-size: .9rem;">Każdego czerwca grupa 10 uczniów z najelpszymi wynikami z języka niemieckiego wyjeżdża do Dortumundu na wymianę z liceum w Essen.</p>
+                    <!-- <p class="text-center" style="font-size: .9rem;">Projekt Erasmus+ jest finansowany przez Unię Europejską</p> -->
+                </div>
+
+            </div>
+
+        </article>
+
+        <h3 class="display-3 w-100 text-center">Naukowe</h3>
+
+
+        <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center" style="width: 42vw;">
+
+
+
+            <div class=" d-flex" style="height: 100%;">
+
+
+                <div class="w-50 p-2 d-flex justify-content-around rounded">
+                    <img class="w-100 pe-3 " src="./esa.png" alt="Zdjęcie klasy 3B">
+                </div>
+
+                <div class=" h-100 d-flex flex-column justify-content-around">
+                    <h1 class="align-self-center text-center">Edukacyjna Sieć Antysmogowa</h1>
+                    <p class="text-center" style="font-size: .9rem;">Inicjatywa NASK, pomagająca nauczać o negatywnych efektach smogu.</p>
+                    <!-- <p class="text-center" style="font-size: .9rem;">Projekt Erasmus+ jest finansowany przez Unię Europejską</p> -->
+                </div>
+
+            </div>
+
+        </article>
+
+        <h3 class="display-3 w-100 text-center">Projekty Stypendialne</h3>
+
+
+            <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center" style="width: 42vw;">
+    
+    
+    
+                <div class=" d-flex" style="height: 100%;">
+    
+    
+                    <div class="w-50 p-2 d-flex justify-content-around rounded">
+                        <img class="w-100 pe-3 " src="./laury.jpg" alt="Zdjęcie klasy 3B">
+                    </div>
+    
+                    <div class=" h-100 d-flex flex-column justify-content-around">
+                        <h1 class="align-self-center text-center">Stypendium Prezydenta Miasta Morzeszczyn</h1>
+                        <p class="text-center" style="font-size: .9rem;">Blisko współpracujemy z prezydentem naszego miasta w celu promowania osiągnięć naukowych naszych najlepszych uczniów.</p>
+                        <!-- <p class="text-center" style="font-size: .9rem;">Projekt Erasmus+ jest finansowany przez Unię Europejską</p> -->
+                    </div>
+    
+                </div>
+
+                <div class="w-100 d-flex justify-content-center  mt-3">
+                    <form action="/download" method="post">
+                        <input type="text" name="file" value="regulamin.pdf" style="display: none;">
+                        <button type="submit" class="btn btn-primary">Pobierz formularz</button>
+                    </form>
+                </div>
+    
+            </article>
+
+            <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center" style="width: 42vw;">
+    
+    
+    
+                <div class=" d-flex" style="height: 100%;">
+    
+    
+                    <div class="w-50 p-2 d-flex justify-content-around rounded">
+                        <img class="w-100 pe-3 " src="./prezes.jfif" alt="Zdjęcie klasy 3B">
+                    </div>
+    
+                    <div class=" h-100 d-flex flex-column justify-content-around">
+                        <h1 class="align-self-center text-center">Stypendium Prezesa Rady Ministrów</h1>
+                        <p class="text-center" style="font-size: .9rem;">Blisko współpracujemy z prezydentem naszego miasta w celu promowania osiągnięć naukowych naszych najlepszych uczniów.</p>
+                        <!-- <p class="text-center" style="font-size: .9rem;">Projekt Erasmus+ jest finansowany przez Unię Europejską</p> -->
+                    </div>
+    
+                </div>
+
+                <div class="w-100 d-flex justify-content-center  mt-3">
+                    <a href="https://www.gov.pl/web/edukacja/stypendia">
+                        <button type="submit" class="btn btn-primary">Formularz zgłoszeniowy</button>
+
+                    </a>
+                </div>
+    
+            </article>
+
+        
+
+
+            <h3 class="display-3 w-100 text-center">Nadchodzące</h3>
+
+            <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center" style="width: 42vw;">
+    
+    
+    
+                <div class=" d-flex" style="height: 100%;">
+    
+    
+                    <div class="w-50 p-2 d-flex justify-content-around rounded">
+                        <img class="w-100 pe-3 " src="./t3g.png" alt="Zdjęcie klasy 3B">
+                    </div>
+    
+                    <div class=" h-100 d-flex flex-column justify-content-around">
+                        <h1 class="align-self-center text-center">Turniej Trójgamiczny</h1>
+                        <p class="text-center" style="font-size: .9rem;">Całoroczny projekt finansowany przez Ministerstwo Cyfryzacji. Celem jest promowanie współpracy wśród młodzieży w pracy nad projektami informaycznymi. </p>
+                        <!-- <p class="text-center" style="font-size: .9rem;">Projekt Erasmus+ jest finansowany przez Unię Europejską</p> -->
+                    </div>
+    
+                </div>
+
+                <div class="w-100 d-flex justify-content-center  mt-3">
+                    <a href="https://t3g.pl/zgloszenia3ed/">
+                        <button type="submit" class="btn btn-primary">Formularz zgłoszeniowy</button>
+
+                    </a>
+                </div>
+    
+            </article>
+
+
+            <article class="border mt-5 mb-5 p-3 rounded d-flex flex-column align-items-center" style="width: 42vw;">
+    
+    
+    
+                <div class=" d-flex" style="height: 100%;">
+    
+    
+                    <div class=" p-2 d-flex justify-content-around rounded">
+                        <img class="w-100 pe-3 " src="./imo.png" alt="Zdjęcie klasy 3B">
+                    </div>
+    
+                    <div class=" h-100 d-flex flex-column justify-content-around">
+                        <h1 class="align-self-center text-center">Międzynarodowa Olimpiada Matematyczna</h1>
+                        <p class="text-center" style="font-size: .9rem;">Na końcu każdego semestru spisujemy wyniki naukowe najlepszych uczniów. Najlepsi matematycy są wysyłani w czwartej klasie na najbardziej prestiżowy konkurs matematyczny.</p>
+                        <!-- <p class="text-center" style="font-size: .9rem;">Projekt Erasmus+ jest finansowany przez Unię Europejską</p> -->
+                    </div>
+    
+                </div>
+
+
+    
+            </article>
+
+    </main>
+
+    <%- include("../footer.ejs"); %>
+</body>
+
+</html>
