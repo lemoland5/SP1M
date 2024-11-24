@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szkoła Podstawowa nr. 1 w Morzeszczynie</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("../navbar.ejs"); %>
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5">
+        <h3 class="display-3 mt-5">
+            Wymagania Edukacyjne
+        </h3>
+
+    </header>
+
+    <section class="container-fluid mt-5 w-50 text-center" >
+        <h3 class="display-3 mb-5">Kryteria oceniania</h3>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Ocena końcowa</th>
+                <th scope="col">próg procentowy</th>
+                <th scope="col">Opanowanie materiału</th>
+                <th scope="col">Dodatkowe informacje</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1 <br> (niedosteteczny)</th>
+                <td>50%</td>
+                <td>Brak jakiegokolwiek zrozumienia materiału z podstawy programowej</td>
+                <td>Jedna trzecia uczniów nie zdaje z matematyki</td>
+              </tr>
+              <tr>
+                <th scope="row">2 <br> (dopuszczający)</th>
+                <td>60%</td>
+                <td>Mierne wyniki z prac pisemnych, brak aktywności na lekcjach. Najniższy poziom pozwalający na zdanie klasy.</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">3 <br> (dostateczny)</th>
+                <td>75%</td>
+                <td>Wzglęne opanowanie materiału z podstawy programowej. Udział w konkursach szkolnych.</td>
+                <td>3 to najwyższa ocena możliwa do zdobycia z języka polskiego</td>
+              </tr>
+              <tr>
+                <th scope="row">4 <br> (dobry)</th>
+                <td>90%</td>
+                <td>Fenomenalne wyniki w nauce. Zajmowanie pierwszych miejsc w ogólnopolskich konkursach przedmiotowych.</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">5 <br> (bardzo dobry)</th>
+                <td>100%</td>
+                <td>Rodzic w kadrze nauczycielskiej</td>
+                <td>Syn Pani Dyrektor mgr. inżynierii Joanny Pawlacz 3 lata z rzędu zdobył ocenę bardzo dobrą z języka angielkskiego. Brawo Kuba!</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </section>
+
+    <section class="container-fluid mt-5 w-50 text-center" >
+        <h3 class="display-3 mb-5">Wykaz podręczników</h3>
+        <p>Każda klasa korzysta z tej samej książki, wierzymy, że gdy zaczynamy od trudniejszego materiału mózg rozwija się najszybciej</p>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Przedmiot</th>
+                <th scope="col">Podręcznik</th>
+                <th scope="col">Wydawnictwo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Język polski</th>
+                <td>Literatura piękna i inne przepisy</td>
+                <td>Kult</td>
+              </tr>
+              <tr>
+                <th scope="row">Matematyka</th>
+                <td>Karta wzorów maturalnych</td>
+                <td>Ministerstwo Edukacji</td>
+              </tr>
+              <tr>
+                <th scope="row">Język angielski</th>
+                <td>1984</td>
+                <td>George Orwell, WorldPress</td>
+              </tr>
+              <tr>
+                <th scope="row">Muzyka</th>
+                <td>Tata Kazika</td>
+                <td>S.P. Records</td>
+              </tr>
+              <tr>
+                <th scope="row">Informatyka</th>
+                <td>Zarządzanie pamięcią w x64 Assembly dla maluchów</td>
+                <td>Linux Torvalds</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </section>
+ 
+    <%- include("../footer.ejs"); %>
+
+</body>
+</html>
