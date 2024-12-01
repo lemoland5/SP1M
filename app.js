@@ -9,6 +9,9 @@ const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 
+
+
+
 //set up view engine -> ejs
 app.set("view engine", "ejs");
 //set up views folder
@@ -37,6 +40,7 @@ app.use(cookieParser());
 app.use(
   express.static(path.join(__dirname, "public")),
 );
+
 
 app.use("/",express.static("./node_modules/bootstrap/dist/"));
 //define routes:

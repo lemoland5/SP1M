@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szkoła Podstawowa nr. 1 w Morzeszczynie</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("../navbar.ejs"); %>
+
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5 mb-5">
+        <h3 class="display-3 mt-5">Zaloguj się do dziennika</h1>
+    </header>
+
+    <main class="d-flex w-100 justify-content-center">
+        
+    <form action="/login" method="post" class="w-50 d-flex flex-column justify-content-center align-items-center">
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input name="email" type="email" id="form2Example1" class="form-control" />
+          <label class="form-label" for="form2Example1">Adres email</label>
+        </div>
+      
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input name="password" type="password" id="form2Example2" class="form-control" />
+          <label class="form-label" for="form2Example2">Hasło</label>
+        </div>
+      
+        <div class="row mb-4">
+          <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+              <label class="form-check-label" for="form2Example31"> Remember me </label>
+            </div>
+          </div>
+      
+
+        </div>
+      
+        <!-- Submit button -->
+        <input type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Zaloguj się</input>
+      
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>Nie masz konta? <a href="/register">Zarejestruj się</a></p>
+          
+      </form>
+
+    </main>
+
+ 
+    <%- include("../footer.ejs"); %>
+
+</body>
+</html>

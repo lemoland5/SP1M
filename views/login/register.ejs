@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szkoła Podstawowa nr. 1 w Morzeszczynie</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("../navbar.ejs"); %>
+
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5 mb-5">
+        <h3 class="display-3 mt-5">Zarejestruj się do dziennika</h1>
+    </header>
+
+    <main class="d-flex w-100 justify-content-center">
+        
+    <form id="form" method="POST" action="/register" class="w-50 d-flex flex-column justify-content-center align-items-center" onsubmit="matchPassword()">
+
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input name="imie" type="text" id="imie" class="form-control" required/>
+            <label class="form-label" for="imie">Imię</label>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input name="nazwisko" type="text" id="nazwisko" class="form-control" required/>
+            <label class="form-label" for="nazwisko">Nazwisko</label>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4 ">
+            <input name="data" type="date" id="data" class="form-control" required/>
+            <label class="form-label" for="data">Data urodzenia</label>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input name="email" type="email" id="email" class="form-control" required/>
+          <label class="form-label" for="email">Adres email</label>
+        </div>
+      
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input name="password" type="password" type="password" id="password" class="form-control" required/>
+          <label class="form-label" for="password">Hasło</label>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4">
+            <input type="password" id="repeatPassword" class="form-control" required/>
+            <label class="form-label" for="repeatPassword">Powtórz hasło</label>
+        </div>
+
+        <p id="errorElement" style="color: red;"></p>
+
+      
+        <!-- Submit button -->
+        <input type="submit" id="submitBtn" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Zarejestruj się</input>
+      
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>Masz konto? <a href="/login">Zaloguj się</a></p>
+          
+      </form>
+
+    </main>
+
+ 
+    <%- include("../footer.ejs"); %>
+
+</body>
+</html>
+
+<script>  
+
+document.getElementById('form').addEventListener('input', function () {
+            validateForm();
+        });
+
+        function validateForm() {
+            const username = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('repeatPassword').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const errorElement = document.getElementById('errorElement');
+
+            let isValid = true;
+
+            if (!username || !password || !confirmPassword) {
+                isValid = false;
+            }
+            if (password !== confirmPassword) {
+                errorElement.textContent = 'Passwords do not match';
+                errorElement.classList.remove('success');
+                errorElement.classList.add('error');
+                isValid = false;
+            } else {
+                errorElement.textContent = '';
+                errorElement.classList.remove('error');
+                errorElement.classList.add('success');
+            }
+
+            if (isValid) {
+                submitBtn.classList.add('enabled');
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.classList.remove('enabled');
+                submitBtn.disabled = true;
+            }
+        }
+    </script>  
+      
