@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szkoła Podstawowa nr. 1 w Morzeszczynie</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("../navbar.ejs"); %>
+
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5 mb-5">
+        <h3 class="display-3 mt-5">Oceny</h1>
+    </header>
+
+    <main class="d-flex w-100 justify-content-center">
+        <section class="container-fluid mt-5 w-50 justify-content-center">
+
+
+            <section class="row d-flex flex-column align-items-center justify-content-center mb-5 gap-5 text-center">
+
+                <form action="#" method="post" class="d-flex flex-column justify-content-center">
+
+                    <div class="d-flex flex-row justify-content-around">
+                        <select name="user" class="form-select w-25" aria-label="Default select example" required>
+                            <% for(var i=0; i <= totalUsers - 1; i++) {%>
+                                <option value="<%= users[i].id%>"><%= users[i].imie %> <%= users[i].nazwisko %></option>
+                            <% } %>
+                        </select>
+    
+                        <select name="przedmiot" class="form-select w-25" aria-label="Default select example" required>
+                            <% for(var i=0; i <= totalPrzedmioty - 1; i++) {%>
+                                <option value="<%= przedmioty[i].id%>"><%= przedmioty[i].nazwa %></option>
+                            <% } %>
+                        </select>
+    
+                        <input name="ocena" type="number" min="1" max="6" placeholder="ocena">
+                        <input name="waga" type="number" min="1" max="10" placeholder="waga">
+                    </div>
+
+
+                    <!-- <input type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Zaloguj się</input> -->
+
+                    <br>
+                    
+                    <input type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4"></input>
+
+                </form>
+
+            </section>
+    </main>
+
+ 
+    <%- include("../footer.ejs"); %>
+
+</body>
+</html>

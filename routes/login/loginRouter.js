@@ -8,10 +8,6 @@ router.get("/", async (req, res) => {
     res.render("./login/login.ejs");
 });
 
-router.get("/", async (req, res) => {
-  res.render("./logowanie-rejestracja/login.ejs");
-});
-
 router.post('/', async (req, res) => {
 
     let redirectAddress = "/dziennik";

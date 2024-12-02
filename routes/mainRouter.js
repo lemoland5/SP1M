@@ -12,8 +12,13 @@ const historyRouter = require('./history/historyRouter')
 const projectsRouter = require('./projects/projectsRouter')
 const loginRouter = require('./login/loginRouter')
 const registerRouter = require('./login/registerRouter')
+const logoutRouter = require('./login/logoutRouter')
 const dziennikRouter = require('./dziennik/dziennikRouter')
 const profileRouter = require('./dziennik/profileRouter')
+const ocenyPanelRouter = require('./dziennik/ocenyPanelRouter')
+const frekwencjaPanelRouter = require('./dziennik/frekwencjaPanelRouter')
+const uwagiPanelRouter = require('./dziennik/uwagiPanelRouter')
+const ocenyRouter = require('./dziennik/ocenyRouter')
 
 router.use(express.json())
 
@@ -30,6 +35,11 @@ router.use('/login', loginRouter)
 router.use('/register', registerRouter)
 router.use('/dziennik', dziennikRouter)
 router.use('/profile', profileRouter)
+router.use('/logout', logoutRouter)
+router.use('/ocenyPanel', ocenyPanelRouter)
+router.use('/frekwencjaPanel', frekwencjaPanelRouter)
+router.use('/uwagiPanel', uwagiPanelRouter)
+router.use('/oceny', ocenyRouter)
 
 router.use('/download', (req, res) => {
     const file = __dirname + "/../public/" + req.body.file;

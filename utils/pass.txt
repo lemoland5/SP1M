@@ -1,0 +1,9 @@
+email: 2@2
+pass: 2
+user: Arek Milo - nauczyciel
+
+---
+
+email: lemo.cam.channel@gmail.com
+pass: 2
+user: Arkadiusz Milik - uczeń
