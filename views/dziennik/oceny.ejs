@@ -18,12 +18,39 @@
         <h3 class="display-3 mt-5">Twoje Oceny</h3>
     </header>
 
-    <main class="d-flex w-100 flex-column align-items-center justify-content-center">
-        <section class="w-25 d-flex flex-column align-items-center justify-content-center text-center">
-            <!-- <% for(var i=0; i <= totalOceny - 1; i++) {%>
 
-            <% } %> -->
-        </section>
+    <h4 class="w-100 text-center">
+        <p>
+            Średnia ogólna z wszystkich przedmiotów:
+            <%= sredniaTotal%>
+        </p>
+    </h4>
+
+    <br>
+    
+    <main class="d-flex w-100 flex-column align-items-center justify-content-center">
+        <table class="table w-50">
+            <thead>
+              <tr>
+                <th scope="col">Przedmiot</th>
+                <th scope="col">Średnia ocen</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <% for(var i=0; i <= totalOcenySrednia - 1; i++) {%>
+                    <tr>
+                        <th><%= ocenySrednia[i].nazwa%></th>
+                        <td><%= ocenySrednia[i].srednia%></td>
+                    </tr>
+                <% } %>
+            </tbody>
+          </table>
+
+
+          <hr>
+          <h4 class="w-100 text-center">Oceny cząstkowe</h4>
+
 
         <table class="table w-50">
             <thead>

@@ -61,13 +61,15 @@ router.post("/", async (req, res) => {
 
         let data = new Date().toISOString().substring(0,10);
 
-        con.query(`inswert into uwaga values(null, ${req.body.user}, ${req.body.punkty}, "${req.body.tresc}", ${req.cookies.session}, "${req.body.typ}", "${data}")`, (err) => {
+        con.query(`insert into uwaga values(null, ${req.body.user}, ${req.body.punkty}, "${req.body.tresc}", ${req.cookies.session}, "${req.body.typ}", "${data}")`, (err) => {
             
             con.query(`update user set punkty = punkty + ${req.body.punkty} where id = ${req.body.user}`, (err) => {
                 con.query(`select klasa from user where id = ${req.cookies.session}`, function (err, result) {
                     let klasa = result[0].klasa;
                     con.query(`select id, imie, nazwisko from user where klasa = ${klasa}`, (err1, result1) => {
         
+
+                        con.end();
                         res.render("./dziennik/uwagiPanel.ejs", {users : result1, totalUsers : result1.length});
                     })
                 });
