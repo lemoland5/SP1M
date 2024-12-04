@@ -15,9 +15,8 @@
 
 
     <header class="container text-center d-flex flex-column align-items-center mt-5 mb-5">
-        <h3 class="display-3 mt-5">Zastępstwa</h3>
+        <h3 class="display-3 mt-5">Nadchodzące zastępstwa</h3>
     </header>
-
 
     <br>
     
@@ -27,20 +26,22 @@
               <tr>
                 <th scope="col">Data</th>
                 <th scope="col">Przedmiot</th>
-                <th scope="col">Typ</th>
-                <th scope="col">Tytuł</th>
+                <th scope="col">Przedmiot zastępczy</th>
                 <th scope="col">Nauczyciel</th>
+                <th scope="col">Zastępca</th>
+                <th scope="col">Typ</th>
               </tr>
             </thead>
             <tbody>
 
-                <% for(var i=0; i <= totalPrace - 1; i++) {%>
+                <% for(var i=0; i <= totalZastepstwa - 1; i++) {%>
                     <tr>
-                        <td ><%= prace[i].data%></td>
-                        <td><%= prace[i].przedmiot%></td>
-                        <td><%= prace[i].rodzaj%></td>
-                        <td><%= prace[i].nazwa%></td>
-                        <td><%= prace[i].nauczyciel%></td>
+                        <td ><%= zastepstwa[i].data%></td>
+                        <td><%= zastepstwa[i].przedmiot%></td>
+                        <td><%= zastepstwa[i].zastepczy%></td>
+                        <td><%= zastepstwa[i].nauczyciel%></td>
+                        <td><%= zastepstwa[i].zastepca%></td>
+                        <td><%= zastepstwa[i].typ%></td>
                     </tr>
                 <% } %>
             </tbody>

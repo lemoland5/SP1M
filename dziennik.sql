@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2024 at 11:24 PM
+-- Generation Time: Dec 04, 2024 at 10:07 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -40,18 +40,6 @@ CREATE TABLE `klasa` (
 INSERT INTO `klasa` (`id`, `nazwa`, `wychowawca`) VALUES
 (1, '3P', 5),
 (2, '1A', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `nauczyciel_przedmiot_klasa`
---
-
-CREATE TABLE `nauczyciel_przedmiot_klasa` (
-  `nauczyciel` int(11) DEFAULT NULL,
-  `klasa` int(11) DEFAULT NULL,
-  `przedmiot` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -98,8 +86,6 @@ CREATE TABLE `ocena` (
 INSERT INTO `ocena` (`id`, `uczen`, `przedmiot`, `ocena`, `waga`, `data`) VALUES
 (1, 2, 1, 1, 1, '2022-10-31'),
 (2, 2, 1, 3, 3, '2022-10-31'),
-(3, 4, 4, 6, 4, '2022-10-31'),
-(4, 4, 3, 3, 2, '2024-12-02'),
 (5, 2, 1, 1, 6, '2024-12-03');
 
 -- --------------------------------------------------------
@@ -177,9 +163,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `imie`, `nazwisko`, `klasa`, `data_urodzenia`, `email`, `punkty`, `rola`, `oczekujacy`, `password`) VALUES
 (2, 'Arkadiusz', 'Milik', 1, '2024-11-11', 'lemo.cam.channel@gmail.com', 5, 'u', 0, 'd4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35'),
-(4, '1', '1', 1, '0001-11-11', '123@222', 0, NULL, 1, '6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b'),
-(5, 'Arek', 'Milo', 1, '0001-11-11', '2@2', 0, 'n', 0, 'd4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35'),
-(6, 'Kaśka', 'Mrągowska', 2, '2000-01-20', 'k.m@sp1m.pl', 0, 'u', 0, NULL);
+(5, 'Arek', 'Milo', 1, '0001-11-11', '2@2', 0, 'a', 0, 'd4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35'),
+(6, 'Kaśka', 'Mrągowska', 2, '2000-01-20', 'k.m@sp1m.pl', 0, 'u', 0, NULL),
+(7, 'Grzegorz', 'Gadaj', 1, '1971-04-30', '4@4', 0, 'n', 0, '4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a'),
+(8, 'Tomasz', 'Nowotny', NULL, '1970-01-01', '5@5', 0, 'n', 0, 'ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d');
 
 -- --------------------------------------------------------
 
@@ -229,10 +216,28 @@ CREATE TABLE `zastepstwo` (
   `id` int(11) NOT NULL,
   `klasa` int(11) NOT NULL,
   `przedmiot` int(11) NOT NULL,
+  `przedmiotZastepczy` int(11) DEFAULT NULL,
   `nauczyciel` int(11) NOT NULL,
   `zastepca` int(11) NOT NULL,
-  `data` date DEFAULT NULL
+  `data` date DEFAULT NULL,
+  `typ` enum('nau','prze','tem') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `zastepstwo`
+--
+
+INSERT INTO `zastepstwo` (`id`, `klasa`, `przedmiot`, `przedmiotZastepczy`, `nauczyciel`, `zastepca`, `data`, `typ`) VALUES
+(1, 1, 1, 1, 7, 7, '2025-01-01', 'tem'),
+(2, 1, 2, 4, 7, 7, '2025-02-01', 'tem'),
+(3, 1, 1, 3, 8, 7, '2025-01-03', 'tem'),
+(4, 1, 2, 4, 7, 8, '2022-05-04', 'tem'),
+(5, 1, 2, 1, 8, 7, '2022-01-01', 'tem'),
+(6, 1, 2, 1, 8, 7, '2022-01-01', 'prze'),
+(7, 1, 1, 1, 8, 7, '2025-03-03', 'nau'),
+(8, 1, 1, 1, 7, 7, '2025-04-04', 'tem'),
+(9, 1, 3, 4, 8, 7, '2027-06-06', 'prze'),
+(10, 2, 2, 2, 8, 8, '2030-01-01', 'tem');
 
 -- --------------------------------------------------------
 
@@ -253,7 +258,10 @@ CREATE TABLE `zgloszenia` (
 
 INSERT INTO `zgloszenia` (`id`, `data`, `user`, `tresc`) VALUES
 (1, '2024-11-30', 5, 'undefined'),
-(2, '2024-11-30', 5, 'kocha m,amasdasd');
+(2, '2024-11-30', 5, 'kocha m,amasdasd'),
+(3, '2024-12-04', 2, 'SMYCZYK\r\n'),
+(4, '2024-12-04', 2, ''),
+(5, '2024-12-04', 5, 'undefined');
 
 --
 -- Indexes for dumped tables
@@ -265,14 +273,6 @@ INSERT INTO `zgloszenia` (`id`, `data`, `user`, `tresc`) VALUES
 ALTER TABLE `klasa`
   ADD PRIMARY KEY (`id`),
   ADD KEY `wychowawca` (`wychowawca`);
-
---
--- Indexes for table `nauczyciel_przedmiot_klasa`
---
-ALTER TABLE `nauczyciel_przedmiot_klasa`
-  ADD KEY `nauczyciel` (`nauczyciel`),
-  ADD KEY `klasa` (`klasa`),
-  ADD KEY `przedmiot` (`przedmiot`);
 
 --
 -- Indexes for table `obecnosc`
@@ -337,7 +337,8 @@ ALTER TABLE `zastepstwo`
   ADD KEY `klasa` (`klasa`),
   ADD KEY `przedmiot` (`przedmiot`),
   ADD KEY `nauczyciel` (`nauczyciel`),
-  ADD KEY `zastepca` (`zastepca`);
+  ADD KEY `zastepca` (`zastepca`),
+  ADD KEY `przedmiotZastepczy` (`przedmiotZastepczy`);
 
 --
 -- Indexes for table `zgloszenia`
@@ -384,7 +385,7 @@ ALTER TABLE `przedmiot`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `uwaga`
@@ -402,13 +403,13 @@ ALTER TABLE `wiadomosc`
 -- AUTO_INCREMENT for table `zastepstwo`
 --
 ALTER TABLE `zastepstwo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `zgloszenia`
 --
 ALTER TABLE `zgloszenia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -421,14 +422,6 @@ ALTER TABLE `klasa`
   ADD CONSTRAINT `klasa_ibfk_1` FOREIGN KEY (`wychowawca`) REFERENCES `user` (`id`);
 
 --
--- Constraints for table `nauczyciel_przedmiot_klasa`
---
-ALTER TABLE `nauczyciel_przedmiot_klasa`
-  ADD CONSTRAINT `nauczyciel_przedmiot_klasa_ibfk_1` FOREIGN KEY (`nauczyciel`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `nauczyciel_przedmiot_klasa_ibfk_2` FOREIGN KEY (`klasa`) REFERENCES `klasa` (`id`),
-  ADD CONSTRAINT `nauczyciel_przedmiot_klasa_ibfk_3` FOREIGN KEY (`przedmiot`) REFERENCES `przedmiot` (`id`);
-
---
 -- Constraints for table `obecnosc`
 --
 ALTER TABLE `obecnosc`
@@ -439,8 +432,8 @@ ALTER TABLE `obecnosc`
 -- Constraints for table `ocena`
 --
 ALTER TABLE `ocena`
-  ADD CONSTRAINT `ocena_ibfk_1` FOREIGN KEY (`uczen`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `ocena_ibfk_2` FOREIGN KEY (`przedmiot`) REFERENCES `przedmiot` (`id`);
+  ADD CONSTRAINT `ocena_ibfk_2` FOREIGN KEY (`przedmiot`) REFERENCES `przedmiot` (`id`),
+  ADD CONSTRAINT `ocena_ibfk_3` FOREIGN KEY (`uczen`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `praca`
@@ -454,7 +447,7 @@ ALTER TABLE `praca`
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`klasa`) REFERENCES `klasa` (`id`);
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`klasa`) REFERENCES `klasa` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `uwaga`
@@ -477,7 +470,8 @@ ALTER TABLE `zastepstwo`
   ADD CONSTRAINT `zastepstwo_ibfk_1` FOREIGN KEY (`klasa`) REFERENCES `klasa` (`id`),
   ADD CONSTRAINT `zastepstwo_ibfk_2` FOREIGN KEY (`przedmiot`) REFERENCES `przedmiot` (`id`),
   ADD CONSTRAINT `zastepstwo_ibfk_3` FOREIGN KEY (`nauczyciel`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `zastepstwo_ibfk_4` FOREIGN KEY (`zastepca`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `zastepstwo_ibfk_4` FOREIGN KEY (`zastepca`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `zastepstwo_ibfk_5` FOREIGN KEY (`przedmiotZastepczy`) REFERENCES `przedmiot` (`id`);
 
 --
 -- Constraints for table `zgloszenia`

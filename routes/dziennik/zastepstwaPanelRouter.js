@@ -71,12 +71,14 @@ router.post("/", async (req, res) => {
         console.log("Connected!");
 
         let typ = "tem";
-        if(!req.body.przedmiot == req.body.przedmiotZastepczy || !req.body.nauczyciel == req.body.zastepca){
-            if(req.body.przedmiot == req.body.przedmiotZastepczy){
-                typ = "prze";
-            }
-            if(req.body.nauczyciel == req.body.zastepca){
+        if(req.body.przedmiot != req.body.przedmiotZastepczy || req.body.nauczyciel != req.body.zastepca){
+
+            if(req.body.nauczyciel != req.body.zastepca){
                 typ = "nau"
+            }
+
+            if(req.body.przedmiot != req.body.przedmiotZastepczy){
+                typ = "prze";
             }
         }
 

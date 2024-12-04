@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szkoła Podstawowa nr. 1 w Morzeszczynie</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("../navbar.ejs"); %>
+
+
+    <header class="container text-center d-flex flex-column align-items-center mt-5 mb-5">
+        <h3 class="display-3 mt-5">Uwagi</h3>
+    </header>
+
+
+
+    <br>
+    
+    <main class="d-flex w-100 flex-column align-items-center justify-content-center">
+        <table class="table w-50">
+            <thead>
+              <tr>
+                <th scope="col">Imię</th>
+                <th scope="col">Nazwisko</th>
+                <th scope="col">Data Urodzenia</th>
+                <th scope="col">Adres email</th>
+                <th scope="col">Akcja</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <% for(var i=0; i <= totalUzytkownicy - 1; i++) {%>
+                    <tr>
+                        <td ><%= uzytkownicy[i].imie%></td>
+                        <td ><%= uzytkownicy[i].nazwisko%></td>
+                        <td ><%= uzytkownicy[i].data_urodzenia%></td>
+                        <td ><%= uzytkownicy[i].email%></td>
+
+                        <td colspan="3">
+                            <form action="#" method="post">
+                                <input name="id" type="number" value="<%= uzytkownicy[i].id%>" style="display: none;">
+
+                                <select class="w-50" name="klasa" class="form-select w-25" aria-label="Default select example" required>
+                                    <% for(var j=0; j <= totalKlasy - 1;j++) {%>
+                                        <option value="<%= klasy[j].id%>"><%= klasy[j].nazwa %></option>
+                                    <% } %>
+                                </select>
+
+                                <select class="w-50" name="rola" class="form-select w-25" required>
+                                    <option value="u">u</option>
+                                    <option value="r">r</option>
+                                    <option value="n">n</option>
+                                    <option value="a">a</option>
+                                </select>
+                                <br>
+
+                                <input type="submit" name="action" value="add">
+                                <input type="submit" name="action" value="delete">
+                            </form>
+                        </td>
+                        
+                    </tr>
+
+
+                <% } %>
+            </tbody>
+          </table>
+
+
+    </main>
+
+ 
+    <%- include("../footer.ejs"); %>
+
+</body>
+</html>

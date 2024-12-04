@@ -13,3 +13,9 @@ user: Arkadiusz Milik - uczeń
 email: 4@4
 pass: 4
 USER: Grzegorz Gadaj - nauczyciel
+
+---
+
+email: 5@5
+pass: 5
+USER: Tomasz Nowotny - nauczyciel
