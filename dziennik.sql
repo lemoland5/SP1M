@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2024 at 10:07 PM
+-- Generation Time: Dec 04, 2024 at 10:45 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -206,6 +206,16 @@ CREATE TABLE `wiadomosc` (
   `odbiorca` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `wiadomosc`
+--
+
+INSERT INTO `wiadomosc` (`id`, `data_wyslania`, `temat`, `tresc`, `nadawca`, `odbiorca`) VALUES
+(1, '2024-12-04', 'as', 'asas', 2, 6),
+(2, '2024-12-04', 'Siema podobasz mi sie', 'cho do 120 zrobimy sql\r\n', 2, 6),
+(3, '2024-12-04', 'prośba o poprawę', 'nie chciałem ściągać jakoś tak wyszło sorki', 2, 5),
+(4, '2024-12-04', 're: prosba o poprawe', 'nah bratku ja wiem ze to bylo celowo masz jedyneczke pozdro 600', 5, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -261,7 +271,8 @@ INSERT INTO `zgloszenia` (`id`, `data`, `user`, `tresc`) VALUES
 (2, '2024-11-30', 5, 'kocha m,amasdasd'),
 (3, '2024-12-04', 2, 'SMYCZYK\r\n'),
 (4, '2024-12-04', 2, ''),
-(5, '2024-12-04', 5, 'undefined');
+(5, '2024-12-04', 5, 'undefined'),
+(6, '2024-12-04', 2, 'cho do 120 zrobimy sql\r\n');
 
 --
 -- Indexes for dumped tables
@@ -397,7 +408,7 @@ ALTER TABLE `uwaga`
 -- AUTO_INCREMENT for table `wiadomosc`
 --
 ALTER TABLE `wiadomosc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `zastepstwo`
@@ -409,7 +420,7 @@ ALTER TABLE `zastepstwo`
 -- AUTO_INCREMENT for table `zgloszenia`
 --
 ALTER TABLE `zgloszenia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
