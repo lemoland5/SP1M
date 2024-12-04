@@ -23,6 +23,8 @@ const frekwencjaRouter = require('./dziennik/frekwencjaRouter')
 const uwagiRouter = require('./dziennik/uwagiRouter')
 const pracePanelRouter = require('./dziennik/pracePanelRouter')
 const praceRouter = require('./dziennik/praceRouter')
+const zastepstwaPanelRouter = require('./dziennik/zastepstwaPanelRouter')
+const zastepstwaRouter = require('./dziennik/zastepstwaRouter')
 
 router.use(express.json())
 
@@ -48,6 +50,8 @@ router.use('/frekwencja', frekwencjaRouter)
 router.use('/uwagi', uwagiRouter)
 router.use('/pracePanel', pracePanelRouter)
 router.use('/prace', praceRouter)
+router.use('/zastepstwaPanel', zastepstwaPanelRouter)
+router.use('/zastepstwa', zastepstwaRouter)
 
 router.use('/download', (req, res) => {
     const file = __dirname + "/../public/" + req.body.file;

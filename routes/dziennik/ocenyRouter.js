@@ -11,8 +11,6 @@ router.get("/", async (req, res) => {
         res.redirect("login");
     }
 
-
-    
     const con = mysql.createConnection({
         host: "localhost",
         user: "root",
