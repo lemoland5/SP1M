@@ -27,6 +27,7 @@ const zastepstwaPanelRouter = require('./dziennik/zastepstwaPanelRouter')
 const zastepstwaRouter = require('./dziennik/zastepstwaRouter')
 const confirmPanelRouter = require('./dziennik/confirmPanelRouter')
 const wiadomosciRouter = require('./dziennik/wiadomosciRouter')
+const uczniowieRouter = require('./dziennik/uczniowieRouter')
 
 router.use(express.json())
 
@@ -56,6 +57,7 @@ router.use('/zastepstwaPanel', zastepstwaPanelRouter)
 router.use('/zastepstwa', zastepstwaRouter)
 router.use('/confirmPanel', confirmPanelRouter)
 router.use('/wiadomosci', wiadomosciRouter)
+router.use('/uczniowie', uczniowieRouter)
 
 router.use('/download', (req, res) => {
     const file = __dirname + "/../public/" + req.body.file;
